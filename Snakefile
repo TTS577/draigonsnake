@@ -18,7 +18,8 @@ CONTAINER_CHECKM2   = "docker://ghcr.io/tts577/meepmeep/checkm2:latest"
 shell.executable("/bin/bash")
 
 # ── Sample sheet ──────────────────────────────────────────────────────────────
-samples_df = pd.read_csv(config["samples"], sep="\t", index_col="sample")
+samples_df = pd.read_csv(config["samples"], sep="\t", dtype={"sample": str})
+samples_df = samples_df.set_index("sample")
 SAMPLES    = samples_df.index.tolist()
 
 def get_raw_reads(wildcards):
