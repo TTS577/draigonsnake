@@ -1,12 +1,12 @@
-# ── meep checkm2 environment ─────────────────────────────────────────────────
+# ── draigonsnake checkm2 environment ─────────────────────────────────────────────
 # Tools: checkm2
 # Build from the repository root:
-#   docker build -f containers/checkm2/Dockerfile -t meep-checkm2 .
+#   docker build -f containers/checkm2/Dockerfile -t draigonsnake-checkm2 .
 FROM mambaorg/micromamba:1.5.8-jammy
 
-LABEL org.opencontainers.image.title="meepmeep-checkm2"
-LABEL org.opencontainers.image.description="meepmeep pipeline – genome completeness & contamination estimation (CheckM2)"
-LABEL org.opencontainers.image.source="https://github.com/TTS577/meepmeep"
+LABEL org.opencontainers.image.title="draigonsnake-checkm2"
+LABEL org.opencontainers.image.description="draigonsnake pipeline – genome completeness & contamination estimation (CheckM2)"
+LABEL org.opencontainers.image.source="https://github.com/TTS577/draigonsnake"
 
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 USER $MAMBA_USER
-COPY --chown=$MAMBA_USER:$MAMBA_USER envs/meepmeep-checkm2.yaml /tmp/env.yaml
+COPY --chown=$MAMBA_USER:$MAMBA_USER envs/draigonsnake-checkm2.yaml /tmp/env.yaml
 RUN micromamba install -y -n base -f /tmp/env.yaml \
     && micromamba clean --all --yes
 

@@ -9,10 +9,10 @@ HUMAN_REF = config.get("human_ref", "resources/GRCh38.mmi")
 
   
 # ── Container images (GHCR) ───────────────────────────────────────────────────
-CONTAINER_LONGREAD  = "docker://ghcr.io/tts577/meepmeep/longread-env:latest"
-CONTAINER_ASSEMBLY  = "docker://ghcr.io/tts577/meepmeep/assembly-tools:latest"
-CONTAINER_MEDAKA    = "docker://ghcr.io/tts577/meepmeep/medaka:latest"
-CONTAINER_CHECKM2   = "docker://ghcr.io/tts577/meepmeep/checkm2:latest"
+CONTAINER_LONGREAD  = "docker://ghcr.io/tts577/draigonsnake/longread-env:latest"
+CONTAINER_ASSEMBLY  = "docker://ghcr.io/tts577/draigonsnake/assembly-tools:latest"
+CONTAINER_MEDAKA    = "docker://ghcr.io/tts577/draigonsnake/medaka:latest"
+CONTAINER_CHECKM2   = "docker://ghcr.io/tts577/draigonsnake/checkm2:latest"
 
 # Ensure process substitutions (tee >(…)) work correctly
 shell.executable("/bin/bash")
@@ -249,7 +249,7 @@ rule medaka:
         chunk_ovlp = config["medaka"]["chunk_ovlp"],
         outdir     = "{outdir}/{sample}/08_medaka",
     threads: 8
-    conda: "envs/meepmeep-medaka.yaml"
+    conda: "envs/draigonsnake-medaka.yaml"
     container: CONTAINER_MEDAKA
     log: "{outdir}/{sample}/logs/medaka.log"
     shell:

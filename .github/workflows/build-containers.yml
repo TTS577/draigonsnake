@@ -16,7 +16,7 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_PREFIX: ghcr.io/tts577/meepmeep
+  IMAGE_PREFIX: ghcr.io/tts577/draigonsnake
 
 jobs:
   # ── longread-env ─────────────────────────────────────────────────────────

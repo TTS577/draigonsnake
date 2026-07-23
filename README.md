@@ -1,4 +1,4 @@
-# meepmeep
+# draigonsnake
 
 ```text
 
@@ -13,7 +13,7 @@
         //            `-.____.-:'""
                         __| |__  
 
-......MEEEEEEP.....MEEEEEEEEEEEEEEEEEEP..... 
+......DRAIGONSNAKE.....DRAIGONSNAKEEEEEEEEEEEEEEEE..... 
 ```
 
 A Snakemake pipeline for human data depletion and bacterial whole-genome
@@ -64,7 +64,7 @@ conflicts. Snakemake creates and caches these automatically on first run.
 
 Retrieve the repo, make sure it is all lowercase:
 ```bash
-git clone https://github.com/tts577/meepmeep.git 
+git clone https://github.com/tts577/draigonsnake.git 
 ```
 ### 1. Sample sheet
 
@@ -94,10 +94,10 @@ All pipeline steps run inside Docker/Apptainer (Singularity) containers hosted o
 
 | Image | Tools |
 |-------|-------|
-| `ghcr.io/tts577/meepmeep/longread-env:latest` | minimap2, samtools, porechop, filtlong, flye, nanostat |
-| `ghcr.io/tts577/meepmeep/assembly-tools:latest` | QUAST, MultiQC |
-| `ghcr.io/tts577/meepmeep/medaka:latest` | Medaka 1.11.3 |
-| `ghcr.io/tts577/meepmeep/checkm2:latest` | CheckM2 |
+| `ghcr.io/tts577/draigonsnake/longread-env:latest` | minimap2, samtools, porechop, filtlong, flye, nanostat |
+| `ghcr.io/tts577/draigonsnake/assembly-tools:latest` | QUAST, MultiQC |
+| `ghcr.io/tts577/draigonsnake/medaka:latest` | Medaka 1.11.3 |
+| `ghcr.io/tts577/draigonsnake/checkm2:latest` | CheckM2 |
 
 Images are built automatically via GitHub Actions (`.github/workflows/build-containers.yml`) whenever the `envs/` or `containers/` directories change.
 
@@ -215,8 +215,8 @@ Adjust `config/config.yaml` to set output paths, filtlong thresholds, Flye genom
 
 Place the following files at the paths configured in `config/config.yaml` (defaults shown):
 
-- `meepmeep/resources/GRCh38.mmi` — minimap2 index of the human reference genome
-- `meepmeep/resources/checkm2_db/uniref100.KO.1.dmnd` — CheckM2 diamond database
+- `draigonsnake/resources/GRCh38.mmi` — minimap2 index of the human reference genome
+- `draigonsnake/resources/checkm2_db/uniref100.KO.1.dmnd` — CheckM2 diamond database
 
 ## Running the pipeline
 
@@ -235,9 +235,9 @@ snakemake --use-apptainer --cores <N>
 All Dockerfiles use the repository root as the build context so that the `envs/` YAML files are accessible:
 
 ```bash
-docker build -f containers/longread_env/Dockerfile   -t meepmeep-longread-env  .
-docker build -f containers/assembly_tools/Dockerfile -t meepmeep-assembly-tools .
-docker build -f containers/medaka/Dockerfile         -t meepmeep-medaka        .
-docker build -f containers/checkm2/Dockerfile        -t meepmeep-checkm2       .
+docker build -f containers/longread_env/Dockerfile   -t draigonsnake-longread-env  .
+docker build -f containers/assembly_tools/Dockerfile -t draigonsnake-assembly-tools .
+docker build -f containers/medaka/Dockerfile         -t draigonsnake-medaka        .
+docker build -f containers/checkm2/Dockerfile        -t draigonsnake-checkm2       .
 ```
 
