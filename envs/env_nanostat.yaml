@@ -1,4 +1,4 @@
-name: meep_nanostat
+name: draigonsnake_nanostat
 channels:
   - conda-forge
   - bioconda

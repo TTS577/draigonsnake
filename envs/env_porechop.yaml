@@ -1,4 +1,4 @@
-name: meep_porechop
+name: draigonsnake_porechop
 channels:
   - conda-forge
   - bioconda
