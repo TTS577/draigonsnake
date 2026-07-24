@@ -5,6 +5,7 @@ channels:
   - nodefaults
 dependencies:
   - python=3.12
+  - checkm2
   - tensorflow=2.17
   - keras=3.11
   - pandas

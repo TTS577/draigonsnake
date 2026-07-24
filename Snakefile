@@ -52,7 +52,7 @@ rule all:
 # ══════════════════════════════════════════════════════════════════════════════
 rule nanostat_raw:
     input:
-        reads = "{outdir}/{sample}/02_human_depletion/{sample}_nonhuman.fastq.gz",
+        reads = get_raw_reads,
     output:
         stats = "{outdir}/{sample}/01_nanostat_raw/{sample}_NanoStats.txt",
     params:
@@ -157,7 +157,7 @@ rule nanostat_clean:
 # ══════════════════════════════════════════════════════════════════════════════
 rule filtlong:
     input:
-        reads = "{outdir}/{sample}/02_human_depletion/{sample}_nonhuman.fastq.gz",
+        reads = "{outdir}/{sample}/03_porechop/{sample}_trimmed.fastq.gz",
     output:
         reads = "{outdir}/{sample}/05_filtlong/{sample}_filtered.fastq.gz",
     params:
@@ -321,6 +321,7 @@ rule quast_polished:
         outdir = "{outdir}/{sample}/10_quast_polished",
     threads: 4
     conda: "envs/env_quast.yaml"
+    container: CONTAINER_ASSEMBLY
     log: "{outdir}/{sample}/logs/quast_polished.log"
     shell:
         """
