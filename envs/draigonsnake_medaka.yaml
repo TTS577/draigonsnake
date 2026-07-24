@@ -1,4 +1,4 @@
-name: draigonsnake-medaka
+name: draigonsnake_medaka
 channels:
   - conda-forge
   - bioconda

@@ -1,4 +1,4 @@
 .snakemake/
-meep_pipeline/results/
-meep_pipeline/resources/
+draigonsnake/results/
+draigonsnake/resources/
 *.log

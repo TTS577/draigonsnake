@@ -1,4 +1,4 @@
-name: meep_minimap2_samtools
+name: draigonsnake_minimap2_samtools
 channels:
   - conda-forge
   - bioconda

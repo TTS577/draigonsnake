@@ -249,7 +249,7 @@ rule medaka:
         chunk_ovlp = config["medaka"]["chunk_ovlp"],
         outdir     = "{outdir}/{sample}/08_medaka",
     threads: 8
-    conda: "envs/draigonsnake-medaka.yaml"
+    conda: "envs/draigonsnake_medaka.yaml"
     container: CONTAINER_MEDAKA
     log: "{outdir}/{sample}/logs/medaka.log"
     shell:
@@ -294,7 +294,7 @@ rule checkm2:
         outdir = "{outdir}/{sample}/09_checkm2",
         db     = config["checkm2"]["db"],
     threads: 8
-    conda: "test_checkm2_src"
+    conda: "envs/draigonsnake_checkm2.yaml"
     container: CONTAINER_CHECKM2
     log: "{outdir}/{sample}/logs/checkm2.log"
     shell:

@@ -66,8 +66,8 @@ conflicts. Snakemake creates and caches these automatically on first run.
 | `envs/env_filtlong.yaml` | Filtlong | ≥ 3.9 |
 | `envs/env_flye.yaml` | Flye | ≥ 3.9 |
 | `envs/env_quast.yaml` | QUAST | ≥ 3.9, < 3.11 |
-| `envs/meep_medaka.yaml` | Medaka | ≥ 3.9, < 3.11 |
-| `envs/meep_checkm2.yaml` | CheckM2 | ≥ 3.9 |
+| `envs/draigonsnake_medaka.yaml` | Medaka | ≥ 3.9, < 3.11 |
+| `envs/draigonsnake_checkm2.yaml` | CheckM2 | ≥ 3.9 |
 | `envs/env_multiqc.yaml` | MultiQC | ≥ 3.9 |
 
 ## Setup
@@ -134,7 +134,7 @@ Edit `config/config.yaml` to set:
 
 | Parameter | Description |
 |-----------|-------------|
-| `outdir` | Output directory (default: `meep_pipeline/results`) |
+| `outdir` | Output directory (default: `draigonsnake/results`) |
 | `human_ref` | Path to pre-built human reference minimap2 index (`.mmi`) |
 | `samples` | Path to sample sheet TSV |
 | `filtlong.min_length` | Minimum read length in bp |
@@ -161,15 +161,15 @@ reference genome, change all files were GRCH38.mmi is refering to the specific
 genome.
 
 - **Human reference index**: place or symlink your pre-built GRCh38 minimap2
-  index at `meep_pipeline/resources/GRCh38.mmi` (or update `human_ref` in the
+  index at `draigonsnake/resources/GRCh38.mmi` (or update `human_ref` in the
   config).
 
 On top of that, place the CheckM2 diomand database in this folder.
 - **CheckM2 database**: place the database at
-  `meep_pipeline/resources/checkm2_db/uniref100.KO.1.dmnd` (or update
+  `draigonsnake/resources/checkm2_db/uniref100.KO.1.dmnd` (or update
   `checkm2.db` in the config).
 
-> **Note**: The `meep_pipeline/resources/` directory is listed in `.gitignore`
+> **Note**: The `draigonsnake/resources/` directory is listed in `.gitignore`
 > to prevent large database and reference files from being committed. You must
 > create this directory locally and populate it with the required files before
 > running the pipeline.
@@ -202,7 +202,7 @@ snakemake --use-conda --cores <N> -n
 ## Output structure
 
 ```
-meep_pipeline/results/
+draigonsnake/results/
 ├── <sample>/
 │   ├── 01_nanostat_raw/
 │   ├── 02_human_depletion/
