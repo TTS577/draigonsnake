@@ -1,4 +1,4 @@
-name: meepmeep_checkm2_test
+name: draigonsnake_checkm2_test
 channels:
   - conda-forge
   - bioconda

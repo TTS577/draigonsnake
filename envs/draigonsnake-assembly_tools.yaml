@@ -1,4 +1,4 @@
-name: meepmeep-assembly_tools
+name: draigonsnake-assembly_tools
 # NOTE: This bundled environment is no longer used by the pipeline.
 # All rules now use dedicated per-tool environments in this directory.
 # Kept for reference only.
