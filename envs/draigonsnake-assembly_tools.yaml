@@ -7,8 +7,6 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - quast >=5.2
-  - multiqc >=1.18
   # Assembly quality assessment
   - quast >=5.2
   # Multi-QC aggregation (supports NanoStat, Flye, CheckM2, QUAST outputs)
