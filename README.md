@@ -251,3 +251,7 @@ docker build -f containers/medaka/Dockerfile         -t draigonsnake-medaka     
 docker build -f containers/checkm2/Dockerfile        -t draigonsnake-checkm2       .
 ```
 
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
